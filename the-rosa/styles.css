@@ -1,0 +1,642 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro:400,900&display=swap');
+/*Global styles*/
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-font: 'Source Sans Pro', sans-serif;
+    --secondary-font: 'Herr Von Muellerhoff', cursive;
+    --body-font: 'Cabin', sans-serif;
+    --main-font-color-dark: #252525;
+    --secondary-font-color: #c59d5f;
+    --body-font-color: #515151;
+}
+
+
+html{
+    font-family: var(--body-font);
+    font-size: 16px;
+    color: var(--body-font-color);
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+/* Header */
+
+
+/* Section */
+section{
+    padding: 3.9rem 0;
+    overflow: hidden;
+}
+
+img{
+    width: 100%;
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+p{
+    font-size: 1.6rem;
+}
+
+.container{
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+}
+
+/* Header */
+header{
+    width: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5), transparent);
+    z-index: 1;
+}
+
+.nav{
+    height: 7.2rem;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+}
+.menu-toggle{
+    color: white;
+    font-size: 2.2rem;
+    position: absolute;
+    top: 50%;
+    right:2.5rem;
+    transform: translateY(-50%);
+    z-index: 1500;
+    cursor: pointer;
+}
+
+.fa-times{
+    display:none;
+    
+}
+
+.nav-list{
+    list-style: none;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 50%;
+    height: 100vh;
+    background-color: var(--main-font-color-dark);
+    display: flex;
+    flex-direction: column;
+    padding: 2.4rem;
+    justify-content: space-around;
+    z-index: 1200;
+    transform: translateX(-100%);
+    transition: transform .6s;
+}
+
+.nav::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 1000;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity .6s;
+}
+
+.fa-bars{
+    font-size: 1.5rem !important;
+}
+.fa-times{
+    font-size: 1.5rem !important;
+}
+.open .fa-times{
+    display: block;
+    
+}
+
+.open .fa-bars{
+    display: none;
+}
+
+.open .nav::before{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.open .nav-list{
+    transform: translateX(0);
+}
+
+.nav-item{
+    border-bottom: 2px solid rgba(255, 255, 255, .5);
+}
+
+.nav-link{
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-right: -2px;
+    transition: color .6s;
+}
+
+.nav-link:hover{
+    color: var(--secondary-font-color);
+}
+
+.hero{
+   width: 100%;
+   height: 100vh;
+   background: url("images/hero.jpg") center no-repeat;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+
+.sub-headline{
+    font-size: 5.5rem;
+    font-family: var(--secondary-font);
+    color: var(--secondary-font-color);
+    font-weight: 100;
+    line-height: .4;
+    letter-spacing: 2px;
+    opacity: 1;
+    animation: fadeIn .7s forwards;
+    animation-delay: .9s;
+}
+
+.first-letter{
+    text-transform: uppercase;
+    font-size: 8.3rem;
+}
+
+.headline{
+    color: #fff;
+    font-size: 1.7rem;
+    font-family: var(--main-font);
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: .5rem;
+    margin-right: -.5rem;
+    opacity: 1;
+    animation: scale .7s forwards;
+    animation-delay: .9s;
+}
+
+.separator{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line{
+    width: 100%;
+    max-width: 8.4rem;
+     height: .1rem;
+    background-color: #fff;
+    position: relative;
+    opacity: 0;
+    animation: growIn 3s forwards;
+    animation-delay: 1.5s; 
+}
+
+.line-right::before, .line-left::before{
+    position: absolute;
+    content: '';
+    top: 50%;
+    border: .4rem solid transparent;
+    transform: translateY(-50%);
+    opacity: 0;
+    animation: growIn 3s forwards;
+    animation-delay: 2s; 
+}
+
+.line-right::before{
+    border-right-color: #fff;
+    right: 0
+}
+
+.line-left::before{
+    border-left-color: #fff;
+    left: 0;
+}
+
+.asterisk{
+    color: var(--secondary-font-color);
+    margin: 0 1.6rem;
+}
+
+.fa-asterisk{
+    font-size: .8rem !important;
+    animation: rotate 5s forwards;
+    opacity: 0;
+    animation-delay: 1s;
+}
+
+.headline-description h5{
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  letter-spacing: 3px;
+  margin-right: -3px;
+  font-weight: 100;
+  font-size: 1.2rem;
+}
+.btn{
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right:-2px;
+}
+
+.cta-btn{
+    background-color: #fff;
+    padding: .9rem 1.8rem;
+    border-radius: .4rem;
+    color: rgba(0, 0, 0, .8);
+    font-size: .8rem;
+    transition: background-color .6s;
+}
+
+.cta-btn:hover, .cta:focus{
+  background-color: var(--secondary-font-color);
+  color: #fff;
+}
+
+.single-animation{
+    opacity: 0;
+    animation: fadeDown 2s forwards;
+    animation-delay: 2s;
+    margin-top: 1rem;
+}
+
+/* About us */
+.global-headline{
+    text-align: center;
+    margin-top:3.9rem;
+}
+
+.global-headline p{
+    font-size: .7rem;
+}
+
+.discover-our-story .global-headline{
+    margin-top: 6.9rem;
+}
+
+.global-headline .asterisk{
+    color: var(--body-font-color);
+    margin: 2.4rem 0;
+}
+
+.headline-dark{
+    color: var(--main-font-color-dark);
+    letter-spacing: 7px;
+    margin-right: -7px;
+
+}
+
+.global-headline .sub-headline{
+    letter-spacing: -1px;
+    line-height: .42;
+}
+
+.restaurant-info{
+    text-align: center;
+}
+
+.restaurant-description{
+    margin-bottom: 1rem;
+}
+ .restaurant-description p{
+     font-size: 1.4rem;
+ }
+.restaurant-info p{
+    line-height: 1.6;
+    margin-bottom: 2.4rem;
+}
+
+.body-btn{
+    font-size: 1rem;
+    color: var(--secondary-font-color);
+    position: relative;
+    transition: color .6s;
+    margin-bottom: 3rem;
+}
+
+.body-btn::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom:-3px;
+    width:100%;
+    height: 2px;
+    background-color: var(--secondary-font-color);
+    transition: background-color .5s;
+} 
+
+.body-btn:hover{
+    color: var(--main-font-color-dark);
+}
+
+.body-btn:hover::before,
+.body-btn:focus::before{
+    background-color: var(--main-font-color-dark);
+}
+
+.tasteful-recipes{
+    background: url("images/tasteful-recipes.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.between{
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-group{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.discover-our-menu, .restaurant-description{
+    padding-top: 3rem;
+    margin-bottom: 0;
+}
+
+.perfect-blend{
+    background: url(images/perfect-blend.jpg) center no-repeat;
+    background-size: cover;
+}
+
+footer{
+    background: #121212;
+    padding: 5rem 0;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.back-to-top{
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    background: #121212;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+.back-to-top i{
+    color: white;
+    padding: 1.6rem;
+    font-size: 1.6rem;
+    animation: up 1.9s infinite
+}
+.footer-content{
+    overflow: hidden;
+}
+
+.footer-content h4{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 3px;
+    margin-bottom: 3rem;
+}
+
+.footer-content .asterisk{
+    margin: 2.4rem 0;
+}
+
+.footer-content-about{
+    margin-bottom: 2rem;
+}
+
+.footer-content-about p{
+    line-height: 2;
+    font-size: 1.2rem;
+}
+
+.social-icons{
+    list-style: none;
+    margin-bottom: 2.4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.social-media h4{
+   margin: 2rem 0;
+   font-size: 1.3rem;
+}
+.social-icons i{
+    font-size: 1.3rem;
+    color: #fff;
+    padding: .8rem 2rem;
+    opacity: .5;
+    transition: color .6s;
+}
+
+.social-icons i:hover,
+.social-icons i:focus{
+  color: var(--secondary-font-color);
+}
+
+.newsletter-form{
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.newsletter-input{
+    width: 100%;
+    max-width: 25rem;
+    padding:1rem;
+    border-radius: .4rem;
+}
+.send{
+    width: 100%;
+    max-width: 25rem;
+    margin-top: .4rem;
+}
+
+
+
+@media screen and (min-width: 950px){
+    section{
+       padding: 7.9rem;   
+    }
+    .menu-toggle{
+        display: none;
+    }
+    .nav{
+        justify-content: space-between;
+    }
+
+    .nav-list{
+        position: initial;
+        height: initial;
+        width: initial;
+        background-color: transparent;
+        flex-direction: row;
+        transform: initial;
+        translate: initial;
+        padding: 0;
+    }
+    .nav-item{
+        margin: 0 2rem;
+        border: none;
+    }
+    
+    .nav-item:last-child{
+        margin-right: 0;
+    }
+    .nav-link{
+        font-size: 1rem;
+    }
+    .active{
+        position: relative;
+    }
+    .active::before{
+        content: '';
+        position: absolute;
+        background: #fff;
+        left: 0;
+        bottom: -3px;
+        height: 2px;
+        width: 100%;
+    }
+    .sub-headline{
+        font-size: 10rem;
+    }
+    .first-letter{
+        font-size: 13rem;
+    }
+    .headline{
+        font-size: 3rem;
+        letter-spacing: 1rem;
+    }
+    .line{
+        max-width: 9rem;
+    }
+    .cta-btn{
+        font-size: 1rem;
+    }
+    .restaurant-info{
+        display: flex;
+        align-items: center;
+    }
+    .restaurant-info > div{
+        flex: 1;
+    }
+    .padding-right{
+        padding-right: 7rem;
+    }
+    .footer-content{
+        max-width: 77.5rem;
+        margin: 0 auto;
+    }
+    .footer-content-about{
+        max-width: 51.3rem;
+        margin: 0 auto 5.4rem;
+    }
+    .footer-content-divider{
+        display: flex;
+        justify-content: space-between;
+    }
+    .social-media, .newsletter-form{
+        max-width: 27.3rem;
+        width: 100%;
+        margin: 0 1rem;
+    }
+    .social-icons i{
+        opacity: 1;
+    }
+    .newsletter-btn{
+        margin-left: 5.5rem;
+    }
+}
+
+@keyframes fadeIn{
+    0%{
+        transform: translateY(4rem);
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes scale{
+    0%{
+        transform: scale(2);
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(-360deg);
+        opacity: 1;
+    }
+}
+@keyframes growIn{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+        opacity: 1;
+    }
+}
+@keyframes fadeDown{
+    0%{
+        transform: translateY(-1rem);
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes up{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1
+    }
+    100%{
+        transform: translateY(-1rem);
+        opacity: 1;
+    }
+}
