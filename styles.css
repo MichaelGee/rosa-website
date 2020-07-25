@@ -95,7 +95,7 @@ header{
     position: absolute;
     top:0;
     left:0;
-    width: 50%;
+    width: 80%;
     height: 100vh;
     background-color: var(--main-font-color-dark);
     display: flex;
@@ -456,7 +456,7 @@ footer{
 .social-icons i{
     font-size: 1.3rem;
     color: #fff;
-    padding: .8rem 2rem;
+    padding: .8rem 1rem;
     opacity: .5;
     transition: color .6s;
 }
