@@ -77,8 +77,8 @@ header{
 .menu-toggle{
     color: white;
     font-size: 2.2rem;
-    position: absolute;
-    top: 50%;
+    position:fixed;
+    top: 6%;
     right:2.5rem;
     transform: translateY(-50%);
     z-index: 1500;
@@ -92,7 +92,7 @@ header{
 
 .nav-list{
     list-style: none;
-    position: absolute;
+    position: fixed;
     top:0;
     left:0;
     width: 80%;
@@ -102,7 +102,7 @@ header{
     flex-direction: column;
     padding: 2.4rem;
     justify-content: space-around;
-    z-index: 1200;
+    z-index: 1800;
     transform: translateX(-100%);
     transition: transform .6s;
 }
@@ -252,8 +252,7 @@ img{
 
 .fa-asterisk{
     font-size: .8rem !important;
-    animation: rotate 5s forwards;
-    opacity: 0;
+    animation: rotate 5s infinite;
     animation-delay: 1s;
 }
 
