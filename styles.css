@@ -163,6 +163,10 @@ header{
     color: var(--secondary-font-color);
 }
 
+img{
+    border-radius: 6px;
+}
+
 .hero{
    width: 100%;
    height: 100vh;
